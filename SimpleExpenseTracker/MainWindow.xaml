@@ -15,6 +15,8 @@
         and dealing with better window sizing, styling and stuff like that... most likely a dashboard
         with inspiration taken from various sources.-->
 
+
+    <!--Just toying around for now... will ultimately migrate to a dashboard.-->
     <StackPanel Margin="10">
 
         <!--Main Window Banner-->
