@@ -6,74 +6,121 @@
         xmlns:local="clr-namespace:SimpleExpenseTracker"
         mc:Ignorable="d"
         Title="My Expense Tracker App"
-        FontFamily="Source Code Pro"
-        Height="450" Width="800" MinHeight="450" MinWidth="800"
-        WindowStartupLocation="CenterScreen" >
+        Height="850" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Loaded="Window_Loaded">
 
     <!--A simple app for tracking expenses. Similar to SimpleTodo but slightly more complex.
         Makes use of DatePicker, and possible writing expenses to a file (as an "expense report")
         and dealing with better window sizing, styling and stuff like that... most likely a dashboard
         with inspiration taken from various sources.-->
 
+    <!--Well this turned out to be a Follow-Along coding adventure... it's not a budgeting or expense tracking
+    app, it's a mockup of a social media dashboard. But this was valuable in following along. I will take
+    more of the training wheels off for projects down the road. Credit goes to:
 
-    <!--Just toying around for now... will ultimately migrate to a dashboard.-->
-    <StackPanel Margin="10">
+    https://github.com/alihaider11/Social-Blade-Dashboard-C-WPF-->
 
-        <!--Main Window Banner-->
-        <TextBlock Text="My Expense Tracker!"
-                   HorizontalAlignment="Center"
-                   FontSize="32"
-                   FontWeight="Bold"/>
 
-        <!--Grid containing a horizontal StackPanel for centering the Expense Input section.-->
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+    <!--TODO - Comments, clean it up, parse it for my own learning.-->
 
-            <StackPanel Orientation="Horizontal"
-                        Grid.Column="1">
-                <Button Content="Add Expense"/>
 
-                <!--TextBox with Label for Expense Amount-->
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Label Content="Amount"
-                           Grid.Row="0"/>
-                    <TextBox Width="200"
-                             Grid.Row="1"/>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <materialDesign:Card Margin="10"
+                             UniformCornerRadius="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="15*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid Grid.Column="0">
+                    <Grid.Resources>
+                        <Style TargetType="materialDesign:PackIcon">
+                            <Setter Property="Width" Value="30"/>
+                            <Setter Property="Height" Value="30"/>
+                        </Style>
+                    </Grid.Resources>
+                    <ListView Margin="0 15">
+                        <ListViewItem HorizontalAlignment="Center" Margin="0">
+                            <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                HorizontalAlignment="Left"
+                                BorderBrush="{x:Null}"
+                                Background="{x:Null}"
+                                Foreground="Black">
+
+                                <StackPanel Margin="-5">
+                                    <materialDesign:PackIcon Kind="EmailOutline"/>
+                                </StackPanel>
+                            </Button>
+                        </ListViewItem>
+
+
+
+
+                        <ListViewItem HorizontalAlignment="Center" Margin="0">
+                            <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                HorizontalAlignment="Left"
+                                BorderBrush="{x:Null}"
+                                Background="{x:Null}"
+                                Foreground="Black">
+
+                                <StackPanel Margin="-5">
+                                    <materialDesign:PackIcon Kind="Cash"/>
+                                </StackPanel>
+                            </Button>
+                        </ListViewItem>
+
+
+
+                        <ListViewItem HorizontalAlignment="Center" Margin="0">
+                            <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                HorizontalAlignment="Left"
+                                BorderBrush="{x:Null}"
+                                Background="{x:Null}"
+                                Foreground="Black">
+
+                                <StackPanel Margin="-5">
+                                    <materialDesign:PackIcon Kind="ChartLineVariant"/>
+                                </StackPanel>
+                            </Button>
+                        </ListViewItem>
+                        <ListViewItem HorizontalAlignment="Center" Margin="0 60 0 0">
+                            <Button Style="{StaticResource MaterialDesignFloatingActionButton}" HorizontalAlignment="Left"
+                             BorderBrush="{x:Null}" Background="{x:Null}" Foreground="Black" x:Name="btnExit" Click="btnExit_Click">
+                                <StackPanel Margin="-5">
+                                    <materialDesign:PackIcon Kind="ExitToApp"/>
+                                </StackPanel>
+                            </Button>
+                        </ListViewItem>
+                    </ListView>
                 </Grid>
 
-                <!--TextBox with Label for Expense Description-->
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Label Content="Description"
-                           Grid.Row="0"/>
-                    <TextBox Width="200"
-                             Grid.Row="1"/>
+                <Grid Grid.Column="1" Background="#F6F5F8" Name="RenderPages">
+
                 </Grid>
+            </Grid>
 
-
-                <DatePicker/>
-            </StackPanel>
-        </Grid>
-
-
-
-
-
-
-
-
-    </StackPanel>
-
+        </materialDesign:Card>
+    </Grid>
 
 </Window>

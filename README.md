@@ -6,6 +6,9 @@ jpg or gif
 ## Description
 A simple expense tracker/budgeting desktop application using a modern Dashboard-style UI in WPF.
 
+**UPDATE** - this changed from a build-it-myself budget/expense app to a follow-along social media dashboard mockup from a YouTube video. Credit goes to https://github.com/alihaider11/Social-Blade-Dashboard-C-WPF
+
+
 ## Purpose
 To expose myself to the burden of designing and implementing a desktop application with a modern look, feel and feature set in WPF.
 
