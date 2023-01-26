@@ -2,9 +2,6 @@
 
 ![SocialDashboard](/SimpleExpenseTracker/Images/SocialDashboard.png?raw=true "SocialDashboard")
 
-## TODO
-jpg or gif
-
 ## Description
 A simple expense tracker/budgeting desktop application using a modern Dashboard-style UI in WPF.
 
