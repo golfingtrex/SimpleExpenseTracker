@@ -1,5 +1,7 @@
 # SimpleExpenseTracker
 
+![SocialDashboard](/SimpleExpenseTracker/Images/SocialDashboard.png?raw=true "SocialDashboard")
+
 ## TODO
 jpg or gif
 
